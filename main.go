@@ -14,14 +14,14 @@ type ResultSet struct {
     Body string `json:"body"`
 }
 
+
 func main() {
 
     response, err := http.Get("https://jsonplaceholder.typicode.com/posts/1")
     if err != nil {
-        fmt.Printf("error making HTTP request: %v\n", err)
+        fmt.Printf("failed to get response: %v\n", err)
         return
     }
-	
     defer response.Body.Close()
 
 	body, err := io.ReadAll(response.Body)
@@ -33,8 +33,9 @@ func main() {
 	var resultSet1 ResultSet
     err = json.Unmarshal(body, &resultSet1)
 
+
     if err != nil {
-        fmt.Printf("error unmarshaling JSON: %v\n", err)
+        fmt.Printf("unmarshaling error: %v\n", err)
         return
     }
 
@@ -42,4 +43,6 @@ func main() {
     fmt.Printf("Post ID: %d\n", resultSet1.PostID)
     fmt.Printf("Title: %s\n", resultSet1.Title)
     fmt.Printf("Body: %s\n", resultSet1.Body)
+    
+ 
 }
