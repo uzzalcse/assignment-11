@@ -19,14 +19,15 @@ func main() {
 
     response, err := http.Get("https://jsonplaceholder.typicode.com/posts/1")
     if err != nil {
-        fmt.Printf("failed to get response: %v\n", err)
+        fmt.Printf("failed to get response: %v\n" , err)
         return
     }
     defer response.Body.Close()
 
 	body, err := io.ReadAll(response.Body)
     if err != nil {
-        fmt.Printf("error reading response body: %v\n", err)
+        fmt.Printf("error reading response body: %v\n",err)
+        
         return
     }
 
@@ -35,7 +36,7 @@ func main() {
 
 
     if err != nil {
-        fmt.Printf("unmarshaling error: %v\n", err)
+        fmt.Printf("unmarshaling error: %v\n" ,err)
         return
     }
 
