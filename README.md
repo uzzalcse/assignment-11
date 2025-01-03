@@ -1,4 +1,4 @@
-# Golang JSON parsing
+# Golang JSON parser
 
 	A simple Go program that show how to fetch and parse JSON data from a REST API.
 
@@ -12,9 +12,26 @@
 	- Proper error handling
 	- Structured data using custom types
 
-## Usage
+# Usage
 
-	To run the program:
-    Clone the reposository. Go to the project directory. And run the following command
 
-``` go run main.go ```
+
+## Clone the git repository
+
+``` 
+git clone https://github.com/uzzalcse/assignment-11.git
+
+```
+
+## Go to the project directory 
+
+```
+cd assignment-11
+```
+
+## Run the program
+
+``` 
+go run main.go 
+
+```
